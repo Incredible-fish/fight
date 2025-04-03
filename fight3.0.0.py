@@ -1,4 +1,4 @@
-#*#
+#--#
 
 '''
 版本：3.0.0
@@ -719,4 +719,4 @@ elif what == str(key_Break_Defense) and Our_power == int(Can_Break_Defense):
 
 """
 
-#*#
+#--#
