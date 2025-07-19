@@ -522,7 +522,7 @@ class menu():
             find_code = re.findall(re_txt, htmls, re.S)
             fight_all_req_version = []
             for item in range(0, len(find_code)):
-                remote_code = find_code[item][54:len(find_code) - 20]
+                remote_code = find_code[item][54:len(find_code) - 21]
                 fight_all_req_version.append(remote_code)
 
             # 排除已下载的版本
@@ -581,6 +581,9 @@ class menu():
         except requests.exceptions.ConnectTimeout:
             print("连接超时,请检查是否开启GitHub加速")
             return None
+        except requests.exceptions.ReadTimeout:
+            print("连接超时,请检查是否开启GitHub加速")
+            return None
         except requests.exceptions.ConnectionError:
             print("检测网络连接或是否受加速器影响")
             return None
@@ -607,7 +610,7 @@ def automatic_update():
         find_code = re.findall(re_txt,htmls,re.S)
         fight_all_req_version = []
         for item in range(0,len(find_code)):
-            fight_all_req = find_code[item][54:len(find_code)-20]
+            fight_all_req = find_code[item][54:len(find_code)-21]
             fight_all_req_version.append(fight_all_req)
 
         #监测是否有新版本
@@ -651,6 +654,9 @@ def automatic_update():
                     if what == "y":
                         os.remove(__file__)
     except requests.exceptions.ConnectTimeout:
+        print("连接超时,请检查是否开启GitHub加速")
+        return None
+    except requests.exceptions.ReadTimeout:
         print("连接超时,请检查是否开启GitHub加速")
         return None
     except requests.exceptions.ConnectionError:
