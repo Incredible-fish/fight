@@ -552,10 +552,7 @@ class menu():
                     break
                 else:
                     for item in range(0, len(find_code)):
-                        if len(find_code) == 1:
-                            fight_all_req = find_code[item][54:len(find_code) - 9]
-                        else:
-                            fight_all_req = find_code[item][54:len(find_code) - 21]
+                        fight_all_req = find_code[item][54:len(find_code[item])-11]
                         fight_all_req_version.append(fight_all_req)
                 rounds += 1
 
@@ -651,10 +648,7 @@ def automatic_update():
                 break
             else:
                 for item in range(0,len(find_code)):
-                    if len(find_code) == 1:
-                        fight_all_req = find_code[item][54:len(find_code) - 9]
-                    else:
-                        fight_all_req = find_code[item][54:len(find_code)-21]
+                    fight_all_req = find_code[item][54:len(find_code[item])-11]
                     fight_all_req_version.append(fight_all_req)
                 rounds += 1
 
